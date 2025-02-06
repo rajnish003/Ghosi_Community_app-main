@@ -7,7 +7,7 @@ import PageNotFound from "./components/PageNotFound";
 import data from "./data";
 import BecomeaMember from "./pages/BecomeaMember";
 import Aboutus from "./components/Aboutus";
-import Aboutghosi from "./pages/Aboutghosi";
+import AboutGhosi from "./pages/AboutGhosi";
 import Literature from "./pages/Literature";
 import VisionMissionObjective from "./pages/VisionMissionObjective";
 import Footer from "./components/Footer";
@@ -47,7 +47,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/aboutus" element={<Aboutus />} />
             <Route path="/become-a-member" element={<BecomeaMember />} />
-            <Route path="/aboutghosi" element={<Aboutghosi />} />
+            <Route path="/aboutghosi" element={<AboutGhosi />} />
             <Route path="/literature" element={<Literature />} />
             <Route path="/vision-mission-objective" element={<VisionMissionObjective />} />
             <Route path="*" element={<PageNotFound />} />
