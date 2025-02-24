@@ -5,7 +5,7 @@ import { DataContext } from "../App";
 const YouthVocal = () => {
   const { cardData } = useContext(DataContext); // Fixed context extraction
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerSlide, setCardsPerSlide] = useState(2); // Default to 2 cards
+  const [cardsPerSlide, setCardsPerSlide] = useState(1); // Default to 2 cards
 
   // Adjust number of visible cards based on screen size
   useEffect(() => {
