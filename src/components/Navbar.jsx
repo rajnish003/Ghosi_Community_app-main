@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink,useNavigate } from "react-router-dom";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { HiMenuAlt3, HiX} from "react-icons/hi";
+import {SlArrowDown, SlArrowUp } from "react-icons/sl";
 
 
 
@@ -30,7 +31,6 @@ const Navbar = () => {
       ],
     },
     { name: "News & Events", link: "/news" },
-    { name: "Upcoming Events", link: "/events" },
     { name: "Prominent Ghosi", link: "/promonentghosi" },
     { name: "Gallery", link: "/gallery" },
   ];
@@ -39,9 +39,9 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   //  for login 
-   const loginHandler = ()=>{
-        navigate("/login");
-   }
+  //  const loginHandler = ()=>{
+  //       navigate("/login");
+  //  }
    // for Become a member
    const memberHandler=()=>{
     navigate("/becomeaMemeber");
@@ -73,9 +73,14 @@ const Navbar = () => {
            {menu.dropdown ? (
              <>
                {/* Dropdown Button */}
-               <button className="text-gray-800 hover:text-blue-500 transition">
+               <button className="flex items-center justify-between w-full text-gray-800 hover:text-blue-500 transition">
                  {menu.name}
-               </button>
+                    {openDropdown === index ? (
+                     <SlArrowUp className="ml-2" />
+                     ) : (
+                     <SlArrowDown className="ml-2" />
+                      )}
+                </button>
          
                {/* Always render dropdown, control visibility with CSS */}
                <ul
@@ -114,7 +119,7 @@ const Navbar = () => {
         </ul>
 
         {/* Buttons (Signup/Login) */}
-        <div className="hidden lg:flex space-x-4">
+        <div className="hidden lg:flex space-x-4 ml-1">
           {/* <button 
             onClick={loginHandler}
           className="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-100 transition">
@@ -129,52 +134,55 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {open && (
-        <div className="lg:hidden bg-gray-100">
-          <ul className="flex flex-col items-start px-6 py-4 space-y-4">
-            {menus.map((menu, index) => (
-              <li key={index} className="w-full">
-                {menu.dropdown ? (
-                  <>
-                    {/* Dropdown Button */}
-                    <button
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === index ? null : index)
-                      }
-                      className="w-full text-left text-gray-800 hover:text-blue-500 transition"
-                    >
-                      {menu.name}
-                    </button>
+     {/* Mobile Menu */}
+{open && (
+  <div className="lg:hidden bg-gray-100">
+    <ul className="flex flex-col items-start px-6 py-4 space-y-4">
+      {menus.map((menu, index) => (
+        <li key={index} className="w-full">
+          {menu.dropdown ? (
+            <>
+              {/* Dropdown Button */}
+              <button
+                onClick={() =>
+                  setOpenDropdown(openDropdown === index ? null : index)
+                }
+                className="w-full text-left text-gray-800 hover:text-blue-500 transition"
+              >
+                {menu.name}
+              </button>
 
-                    {/* Dropdown List (Mobile) */}
-                    {openDropdown === index && (
-                      <ul className="ml-4 mt-2 border-l-2 border-gray-300 pl-4 space-y-2">
-                        {menu.dropdown.map((item, subIndex) => (
-                          <li key={subIndex}>
-                            <NavLink
-                              to={item.link}
-                              className="block text-gray-700 hover:text-blue-500 transition"
-                            >
-                              {item.name}
-                            </NavLink>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
-                ) : (
-                  <NavLink
-                    to={menu.link}
-                    className="text-gray-800 hover:text-blue-500 transition"
-                  >
-                    {menu.name}
-                  </NavLink>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+              {/* Dropdown List (Mobile) */}
+              {openDropdown === index && (
+                <ul className="ml-4 mt-2 border-l-2 border-gray-300 pl-4 space-y-2">
+                  {menu.dropdown.map((item, subIndex) => (
+                    <li key={subIndex}>
+                      <NavLink
+                        to={item.link}
+                        className="block text-gray-700 hover:text-blue-500 transition"
+                        onClick={() => setOpen(false)} // Close menu on click
+                      >
+                        {item.name}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </>
+          ) : (
+            <NavLink
+              to={menu.link}
+              className="text-gray-800 hover:text-blue-500 transition"
+              onClick={() => setOpen(false)} // Close menu on click
+            >
+              {menu.name}
+            </NavLink>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
     </nav>
   );
 };

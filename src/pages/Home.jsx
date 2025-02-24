@@ -4,7 +4,7 @@ import Latest_post from '../components/Latest_post'
 import Aboutghosi from '../components/Aboutus'
 import Youth_vocal from '../components/Youth_vocal'
 import Magazines from '../components/Magazines'
-// import Footer from '../components/Footer'
+import Homes_cards from '../components/Homes_cards'
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
         <Aboutghosi/>
         <Youth_vocal/>
         <Magazines/>
-        {/* <Footer/> */}
+        <Homes_cards/>
     </div>
   )
 }

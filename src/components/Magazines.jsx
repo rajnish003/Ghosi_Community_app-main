@@ -41,7 +41,7 @@ const Magazines = () => {
   };
 
   return (
-    <div className="p-4  bg-blue-300 min-h-screen flex flex-col items-center">
+    <div className="p-4  bg-blue-300 min-h-[80vh] flex flex-col items-center">
       <h3 className="text-3xl font-bold bg-gradient-to-r from-red-300 to-yellow-300  text-center py-2 px-6 rounded-xl mb-6 shadow-lg">
         Magazines
       </h3>
