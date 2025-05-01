@@ -3,9 +3,9 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import { DataContext } from "../App";
 
 const YouthVocal = () => {
-  const { cardData } = useContext(DataContext); // Fixed context extraction
+  const { cardData } = useContext(DataContext);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerSlide, setCardsPerSlide] = useState(1); // Default to 2 cards
+  const [cardsPerSlide, setCardsPerSlide] = useState(1);
 
   // Adjust number of visible cards based on screen size
   useEffect(() => {
@@ -15,22 +15,18 @@ const YouthVocal = () => {
 
     updateCardsPerSlide();
     window.addEventListener("resize", updateCardsPerSlide);
-    return () => window.removeEventListener("resize", updateCardsPerSlide);
+    return () => (window.removeEventListener("resize", updateCardsPerSlide));
   }, []);
-
-  if (!cardData || !Array.isArray(cardData) || cardData.length === 0) {
-    return <p className="text-center text-gray-500">Loading user data...</p>;
-  }
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + cardsPerSlide < cardData.length ? prevIndex + cardsPerSlide : 0
+      prevIndex < cardData.length - 1 ? prevIndex + 1 : 0
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? cardData.length - cardsPerSlide : prevIndex - cardsPerSlide
+      prevIndex > 0 ? prevIndex - 1 : cardData.length - 1
     );
   };
 
@@ -52,9 +48,11 @@ const YouthVocal = () => {
         {/* Cards Container */}
         <div
           className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }} // Fixed movement
+          style={{
+            transform: `translateX(-${(currentIndex * 100) / cardsPerSlide}%)`, // Adjust translation based on cards per slide
+          }}
         >
-          {cardData.map((user, index) => (
+          {cardData.map((user) => (
             <div key={user.id} className="w-full sm:w-1/2 p-3 flex-shrink-0">
               <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
                 <div className="relative w-32 h-32 mx-auto">

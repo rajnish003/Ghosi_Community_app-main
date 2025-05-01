@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Homes_cards = () => {
     const data = [
@@ -35,10 +35,9 @@ const Homes_cards = () => {
         }
     ];
 
-   // const navigate=useNavigate();
+   const navigate=useNavigate();
 const Clickhandler = ()=>{
-    const googleFormLink="https://forms.gle/YTHsa5fBKwp9XRFK7"
-    window.open(googleFormLink,'_blank');
+    navigate("/help")
 }
     
 return (

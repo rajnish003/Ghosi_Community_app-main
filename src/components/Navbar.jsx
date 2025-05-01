@@ -4,7 +4,6 @@ import { HiMenuAlt3, HiX} from "react-icons/hi";
 import {SlArrowDown, SlArrowUp } from "react-icons/sl";
 
 
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -38,10 +37,10 @@ const Navbar = () => {
   // navigate the Login Button
   const navigate = useNavigate();
 
-  //  for login 
-  //  const loginHandler = ()=>{
-  //       navigate("/login");
-  //  }
+   //for login 
+   const adminLoginHandler = ()=>{
+        navigate("/adminlogin");
+   }
    // for Become a member
    const memberHandler=()=>{
     navigate("/becomeaMemeber");
@@ -120,11 +119,11 @@ const Navbar = () => {
 
         {/* Buttons (Signup/Login) */}
         <div className="hidden lg:flex space-x-4 ml-1">
-          {/* <button 
-            onClick={loginHandler}
+          <button 
+            onClick={adminLoginHandler}
           className="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-100 transition">
-            Login
-          </button> */}
+            Admin
+          </button>
           <button 
           onClick={memberHandler}
           className="border border-green-500 text-red-500 px-4 py-2 rounded-md hover:bg-green-300 transition font-semibold">
