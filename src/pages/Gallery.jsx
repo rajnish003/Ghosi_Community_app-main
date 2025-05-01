@@ -4,16 +4,20 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 export default function Gallery() {
   return (
-    <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+    <ImageList sx={{ width: 1434, height: 1050}} cols={4} rowHeight={164}
+      className='border-8 border-solid border-[#166def]'
+    >
       {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img
-            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
+        <div key={item.img} className="p-1"> {/* Add padding/margin for spacing */}
+          <ImageListItem>
+            <img
+              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+              alt={item.title}
+              loading="lazy"
+            />
+          </ImageListItem>
+        </div>
       ))}
     </ImageList>
   );

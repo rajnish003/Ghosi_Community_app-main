@@ -1,0 +1,259 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Rahul Sharma",
+      "age": 28,
+      "gender": "Male",
+      "religion": "Hindu",
+      "caste": "Brahmin",
+      "city": "Delhi",
+      "motherTongue":"hindi",
+      "profession": "Software Engineer",
+      "interests": [
+        "Traveling",
+        "Reading",
+        "Music"
+      ],
+      "image": "https://example.com/image1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Priya Verma",
+      "age": 25,
+      "gender": "Female",
+      "religion": "Hindu",
+      "caste": "Kshatriya",
+      "city": "Mumbai",
+      "profession": "Doctor",
+      "motherTongue":"hindi",
+      "interests": [
+        "Cooking",
+        "Dancing",
+        "Yoga"
+      ],
+      "image": "https://media.istockphoto.com/id/1722828584/photo/embarrassed-young-woman-in-shirt-on-white-background.jpg?s=612x612&w=0&k=20&c=7NF-6DRwktURe8b8R91nZBeF5zlt7oakCFq9Ie9AgaE="
+    },
+    {
+      "id": "3",
+      "name": "Amit Patel",
+      "age": 30,
+      "gender": "Male",
+      "religion": "Hindu",
+      "caste": "Vaishya",
+      "city": "Ahmedabad",
+      "profession": "Businessman",
+      "motherTongue":"hindi",
+      "interests": [
+        "Fitness",
+        "Investing",
+        "Gaming"
+      ],
+      "image": "https://example.com/image3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Sneha Reddy",
+      "age": 26,
+      "gender": "Female",
+      "religion": "Christian",
+      "caste": "General",
+      "city": "Hyderabad",
+      "profession": "Teacher",
+      "motherTongue":"hindi",
+      "interests": [
+        "Painting",
+        "Writing",
+        "Social Work"
+      ],
+      "image": "https://example.com/image4.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Vikas Yadav",
+      "age": 29,
+      "gender": "Male",
+      "religion": "Hindu",
+      "caste": "Yadav",
+      "city": "Lucknow",
+      "profession": "Civil Engineer",
+      "motherTongue":"hindi",
+      "interests": [
+        "Sports",
+        "Traveling",
+        "Photography"
+      ],
+      "image": "https://example.com/image5.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Anjali Mehta",
+      "age": 24,
+      "gender": "Female",
+      "religion": "Hindu",
+      "caste": "Marwari",
+      "city": "Jaipur",
+      "profession": "Fashion Designer",
+      "motherTongue":"hindi",
+      "interests": [
+        "Fashion",
+        "Cooking",
+        "Yoga"
+      ],
+      "image": "https://example.com/image6.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Arjun Nair",
+      "age": 27,
+      "gender": "Male",
+      "religion": "Hindu",
+      "caste": "Nair",
+      "city": "Kochi",
+      "profession": "Pilot",
+      "motherTongue":"hindi",
+      "interests": [
+        "Flying",
+        "Music",
+        "Movies"
+      ],
+      "image": "https://example.com/image7.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Divya Iyer",
+      "age": 26,
+      "gender": "Female",
+      "religion": "Hindu",
+      "caste": "Iyer",
+      "city": "Chennai",
+      "profession": "Chartered Accountant",
+      "motherTongue":"hindi",
+      "interests": [
+        "Reading",
+        "Gardening",
+        "Dancing"
+      ],
+      "image": "https://example.com/image8.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Rohit Das",
+      "age": 30,
+      "gender": "Male",
+      "religion": "Hindu",
+      "caste": "Kayastha",
+      "city": "Kolkata",
+      "profession": "Bank Manager",
+      "motherTongue":"hindi",
+      "interests": [
+        "Investing",
+        "Music",
+        "Cycling"
+      ],
+      "image": "https://example.com/image9.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Meera Kapoor",
+      "age": 25,
+      "gender": "Female",
+      "religion": "Hindu",
+      "caste": "Punjabi Khatri",
+      "city": "Chandigarh",
+      "profession": "Interior Designer",
+      "motherTongue":"hindi",
+      "interests": [
+        "Decorating",
+        "Photography",
+        "Music"
+      ],
+      "image": "https://example.com/image10.jpg"
+    },
+    {
+      "id": "11",
+      "name": "Sameer Khan",
+      "age": 28,
+      "gender": "Male",
+      "religion": "Muslim",
+      "caste": "Sunni",
+      "city": "Bhopal",
+      "profession": "Lawyer",
+      "motherTongue":"hindi",
+      "interests": [
+        "Debates",
+        "Reading",
+        "Traveling"
+      ],
+      "image": "https://example.com/image11.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Ayesha Siddiqui",
+      "age": 24,
+      "gender": "Female",
+      "religion": "Muslim",
+      "caste": "Shia",
+      "city": "Hyderabad",
+      "profession": "Software Developer",
+      "motherTongue":"hindi",
+      "interests": [
+        "Coding",
+        "Cooking",
+        "Movies"
+      ],
+      "image": "https://example.com/image12.jpg"
+    },
+    {
+      "id": "13",
+      "name": "Vikram Singh",
+      "age": 29,
+      "gender": "Male",
+      "religion": "Sikh",
+      "caste": "Jat",
+      "city": "Amritsar",
+      "profession": "Army Officer",
+      "motherTongue":"hindi",
+      "interests": [
+        "Fitness",
+        "Shooting",
+        "Adventure Sports"
+      ],
+      "image": "https://example.com/image13.jpg"
+    },
+    {
+      "id": "14",
+      "name": "Simran Kaur",
+      "age": 26,
+      "gender": "Female",
+      "religion": "Sikh",
+      "caste": "Khatri",
+      "city": "Ludhiana",
+      "profession": "Professor",
+      "motherTongue":"hindi",
+      "interests": [
+        "Teaching",
+        "Cooking",
+        "Reading"
+      ],
+      "image": "https://example.com/image14.jpg"
+    },
+    {
+      "id": "15",
+      "name": "Aditya Roy",
+      "age": 28,
+      "gender": "Male",
+      "religion": "Christian",
+      "caste": "General",
+      "city": "Bangalore",
+      "profession": "Marketing Manager",
+      "motherTongue":"hindi",
+      "interests": [
+        "Public Speaking",
+        "Traveling",
+        "Music"
+      ],
+      "image": "https://example.com/image15.jpg"
+    }
+  ]
+}

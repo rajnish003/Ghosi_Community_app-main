@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { DataContext } from "../App"; // Import Context
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -8,14 +9,10 @@ const Footer = () => {
     comment: "" 
   });
 
-  const [visitorCount, setVisitorCount] = useState(0);
-
-  useEffect(() => {
-    const storedCount = localStorage.getItem("visitorCount");
-    const count = storedCount && !isNaN(storedCount) ? parseInt(storedCount, 10) + 5 : 1;
-    localStorage.setItem("visitorCount", count);
-    setVisitorCount(count);
-  }, []);
+  // Ensure `context` is not undefined before accessing `counter`
+  const {counter} = useContext(DataContext);
+  // const counter = context?.counter ?? 0; // Default to 0 if `counter` is undefined
+  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -96,17 +93,20 @@ const Footer = () => {
         <div className="mt-6 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center text-gray-500">
           {/* Social Icons */}
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-blue-400 text-2xl"><FaFacebook /></a>
+            <a href="https://www.facebook.com/muslimghosiunite/" className="text-gray-400 hover:text-blue-400 text-2xl"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><FaFacebook /></a>
             <a href="#" className="text-gray-400 hover:text-blue-400 text-2xl"><FaTwitter /></a>
             <a href="#" className="text-gray-400 hover:text-blue-400 text-2xl"><FaInstagram /></a>
             <a href="#" className="text-gray-400 hover:text-blue-400 text-2xl"><FaLinkedin /></a>
           </div>
 
-          {/* Visitor Count */}
-          <div className="text-gray-400 mt-4 md:mt-0">
-            <p>Visitor Count: <span className="font-bold text-white">{visitorCount}</span></p>
-          </div>
+           {/* Visitor Count */}
 
+          <div className="text-gray-400 mt-4 md:mt-0">
+            <p>Visitor Count: <span className="font-bold text-white">{counter}</span></p>
+          </div>
           {/* Copyright */}
           <p className="mt-4 md:mt-0">© 2025 Ghoshi Community. All rights reserved.</p>
         </div>

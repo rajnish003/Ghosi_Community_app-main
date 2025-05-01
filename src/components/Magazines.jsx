@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 const Magazines = () => {
-  const [fullImage, setFullImage] = useState(null);
+  // const [fullImage, setFullImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
   
   const images = [
-    { src: "/image/img12.jpg", alt: "Image 1" },
-    { src: "/image/img2.jpg", alt: "Image 2" },
+    { src: "/image/fImage1.jpg", alt: "Image 1" },
+    { src: "/image/fimage2.jpg", alt: "Image 2" },
     { src: "/image/img3.jpg", alt: "Image 3" },
-    { src: "/image/img4.jpg", alt: "Image 4" },
-    { src: "/image/img5.jpg", alt: "Image 5" },
-    { src: "/image/img6.jpg", alt: "Image 6" },
-    { src: "/image/img7.jpg", alt: "Image 7" },
-    { src: "/image/img8.jpg", alt: "Image 8" },
+    
   ];
 
   useEffect(() => {
@@ -43,7 +39,7 @@ const Magazines = () => {
   return (
     <div className="p-4  bg-blue-300 min-h-[80vh] flex flex-col items-center">
       <h3 className="text-3xl font-bold bg-gradient-to-r from-red-300 to-yellow-300  text-center py-2 px-6 rounded-xl mb-6 shadow-lg">
-        Magazines
+        EVENTS SNAPSHOT
       </h3>
 
       {/* Image Grid */}
@@ -57,7 +53,7 @@ const Magazines = () => {
               key={index}
               className="w-1/3 p-2 cursor-pointer transition-transform transform hover:scale-105"
               style={{ flex: `0 0 ${100 / cardsPerSlide}%` }}
-              onClick={() => setFullImage(img.src)}
+              // onClick={() => setFullImage(img.src)}
             >
               <img
                 src={img.src}
@@ -69,7 +65,7 @@ const Magazines = () => {
         </div>
 
         {/* Navigation Buttons (Hidden when Full Image Modal is Open) */}
-        {!fullImage && (
+        {/* {!fullImage && ( */}
           <>
             <button
               onClick={prevSlide}
@@ -84,11 +80,11 @@ const Magazines = () => {
               ❯
             </button>
           </>
-        )}
+        {/* )} */}
       </div>
 
       {/* Full Image Modal */}
-      {fullImage && (
+      {/* {fullImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4"
           onClick={() => setFullImage(null)} // Close when clicking anywhere
@@ -107,7 +103,7 @@ const Magazines = () => {
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
