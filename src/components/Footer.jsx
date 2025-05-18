@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center md:text-left">
           {/* About Section */}
           <div>
-            <h2 className="text-xl font-bold mb-2">Visition</h2>
+            <h2 className="text-xl font-bold mb-2">Vision</h2>
             <p className="text-gray-400">
               This is a great platform to unite all like-minded Ghosi people at one station.
             </p>
@@ -41,7 +41,7 @@ const Footer = () => {
           <div>
             <h2 className="text-xl font-bold mb-2">Quick Links</h2>
             <ul className="text-gray-400 space-y-2">
-              <li><a href="/about" className="hover:text-blue-400">About</a></li>
+              <li><a href="/aboutghosi" className="hover:text-blue-400">About</a></li>
               <li><a href="/courses" className="hover:text-blue-400">Posts</a></li>
               <li><a href="/contact" className="hover:text-blue-400">Contact</a></li>
               <li><a href="/faq" className="hover:text-blue-400">FAQ</a></li>

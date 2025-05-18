@@ -6,7 +6,7 @@ import Footer from './Footer'; // Import Footer Component
 
 const MainHeader = () => {
   return (
-    <div>
+    <div className=''>
       <Header />
       <Navbar />
       

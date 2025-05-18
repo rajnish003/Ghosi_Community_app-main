@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="py-6 bg-green-500">
+    <div className=" py-6 bg-green-500">
       <div className="flex flex-col md:flex-row items-center justify-around px-6 max-w-7xl mx-auto space-y-4 md:space-y-0">
         
         {/* Left Section (Logo) */}
