@@ -28,11 +28,11 @@ const Homes_cards = () => {
             title: "Government Department Help",
             description: "Assisting with government-related services, documentation, and grievance redressal."
         },
-        {
-            id: 6,
-            title: "Donation for Ghosi Community",
-            description: "Encouraging community donations to support social and educational initiatives."
-        }
+        // {
+        //     id: 6,
+        //     title: "Donation for Ghosi Community",
+        //     description: "Encouraging community donations to support social and educational initiatives."
+        // }
     ];
 
    const navigate=useNavigate();

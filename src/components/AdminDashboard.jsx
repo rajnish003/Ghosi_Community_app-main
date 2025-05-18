@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import Card from "../components/Card"; 
 import { BarChart, Users, FileWarning, Search } from "lucide-react";
+import { useAuth } from '../context/AuthProvider';
 
 const AdminDashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
+ const { logout } = useAuth();
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
+
+  const clickHandler =()=>{
+    logout  
+    location.reload();
+
+  }
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
@@ -53,6 +60,18 @@ const AdminDashboard = () => {
           </div>
         </Card>
       </div>
+
+{/* logout section */}
+
+      <div>
+      <button onClick={clickHandler}
+      
+      className="bg-red-500 text-white px-4 py-2 rounded">
+        Logout
+      </button>
+    </div>
+
+
     </div>
   );
 };

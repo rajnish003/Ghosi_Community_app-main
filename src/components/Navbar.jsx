@@ -40,25 +40,39 @@ const Navbar = () => {
    //for login 
    const adminLoginHandler = ()=>{
         navigate("/adminlogin");
+        location.reload();
    }
    // for Become a member
    const memberHandler=()=>{
-    navigate("/becomeaMemeber");
+    navigate("/becomeaMember");
    }
 
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="  bg-white shadow-md outline-3 outline-offset-2 outline-green-500">
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between py-4">
-        {/* Logo */}
+  {/* Logo (if any) */}
+  
+  {/* Mobile Become a Member Button */}
+ <div className="flex justify-around items-center w-full px-4 py-2 sm:px-6 lg:hidden">
+  {!open && (
+    <button
+      onClick={memberHandler}
+      className="border border-green-500 text-red-500 px-4 py-2 rounded-md hover:bg-green-300 transition font-semibold"
+    >
+      Become a Member
+    </button>
+  )}
+  
+  {/* Hamburger Icon */}
+  <button
+    onClick={() => setOpen(!open)}
+    className="text-3xl text-gray-800"
+  >
+    {open ? <HiX /> : <HiMenuAlt3 />}
+  </button>
+</div>
 
-        {/* Hamburger Menu (Mobile) */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden text-3xl text-gray-800"
-        >
-          {open ? <HiX /> : <HiMenuAlt3 />}
-        </button>
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-8 items-center">
@@ -72,7 +86,7 @@ const Navbar = () => {
            {menu.dropdown ? (
              <>
                {/* Dropdown Button */}
-               <button className="flex items-center justify-between w-full text-gray-800 hover:text-blue-500 transition">
+               <button className="flex items-center justify-between w-full text-gray-800 hover:text-green-500 transition">
                  {menu.name}
                     {openDropdown === index ? (
                      <SlArrowUp className="ml-2" />
@@ -93,8 +107,8 @@ const Navbar = () => {
                        to={item.link}
                        className={({ isActive }) =>
                          `${
-                           isActive ? "text-blue-500 font-semibold" : "text-gray-700"
-                         } block mx-1 mb-1 px-3 py-2 rounded-full hover:bg-blue-200 transition-colors duration-200`
+                           isActive ? "text-green-500 font-semibold" : "text-gray-700"
+                         } block mx-1 mb-1 px-3 py-2 rounded-full hover:bg-green-200 transition-colors duration-200`
                        }
                      >
                        {item.name}
@@ -107,7 +121,7 @@ const Navbar = () => {
              <NavLink
                to={menu.link}
                className={({ isActive }) =>
-                 `${isActive ? "text-blue-500 font-semibold" : "text-gray-800"} hover:text-blue-500 transition`
+                 `${isActive ? "text-green-500 font-semibold" : "text-gray-800"} hover:text-green-500 transition`
                }
              >
                {menu.name}
@@ -120,8 +134,9 @@ const Navbar = () => {
         {/* Buttons (Signup/Login) */}
         <div className="hidden lg:flex space-x-4 ml-1">
           <button 
+
             onClick={adminLoginHandler}
-          className="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-100 transition">
+          className="border border-green-500 text-green-500 px-4 py-2 rounded-md hover:bg-green-100 transition">
             Admin
           </button>
           <button 
@@ -136,19 +151,31 @@ const Navbar = () => {
      {/* Mobile Menu */}
 {open && (
   <div className="lg:hidden bg-gray-100">
+   
     <ul className="flex flex-col items-start px-6 py-4 space-y-4">
       {menus.map((menu, index) => (
         <li key={index} className="w-full">
           {menu.dropdown ? (
             <>
+
+            
+
               {/* Dropdown Button */}
               <button
                 onClick={() =>
                   setOpenDropdown(openDropdown === index ? null : index)
                 }
-                className="w-full text-left text-gray-800 hover:text-blue-500 transition"
+                className="flex w-full text-left text-gray-800 hover:text-green-500 transition"
               >
                 {menu.name}
+
+
+                {openDropdown === index ? (
+                     <SlArrowUp className="ml-3 mt-1" />
+                     ) : (
+                     <SlArrowDown className="ml-3 mt-1" />
+                      )}
+
               </button>
 
               {/* Dropdown List (Mobile) */}
@@ -158,7 +185,7 @@ const Navbar = () => {
                     <li key={subIndex}>
                       <NavLink
                         to={item.link}
-                        className="block text-gray-700 hover:text-blue-500 transition"
+                        className="block text-gray-700 hover:text-green-500 transition"
                         onClick={() => setOpen(false)} // Close menu on click
                       >
                         {item.name}
@@ -171,7 +198,7 @@ const Navbar = () => {
           ) : (
             <NavLink
               to={menu.link}
-              className="text-gray-800 hover:text-blue-500 transition"
+              className="text-gray-800 hover:text-green-500 transition"
               onClick={() => setOpen(false)} // Close menu on click
             >
               {menu.name}
@@ -180,6 +207,20 @@ const Navbar = () => {
         </li>
       ))}
     </ul>
+
+        <div className="lg:hidden sm:flex flex-col space-x-4 space-y-4  ml-4">
+          <button 
+            onClick={adminLoginHandler}
+          className="border border-green-500 text-green-500 px-4 py-2 rounded-md hover:bg-green-100 transition">
+            Admin
+          </button>
+          <button 
+          onClick={memberHandler}
+          className="border border-green-500 text-red-500 px-4 py-2 rounded-md hover:bg-green-300 transition font-semibold">
+            Become a Member
+          </button>
+        </div>
+
   </div>
 )}
     </nav>

@@ -2,9 +2,9 @@ import React from "react";
 
 const VisionMissionObjectives = () => {
   return (
-    <div className="min-h-screen bg-gray-100  px-3">
+    <div className="min-h-screen bg-gray-100  px-3 mt-4">
       {/* Header Section */}
-      <header className="bg-blue-900 text-white text-center py-3">
+      <header className="bg-linear-to-r from-gray-500 via-green-500 to-emerald-400 text-white text-center py-3">
         <h1 className="text-4xl font-bold">Our Vision, Mission & Objectives</h1>
       </header>
 
@@ -12,7 +12,7 @@ const VisionMissionObjectives = () => {
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-8">
         {/* Vision Section */}
         <section className="mb-6">
-          <h2 className="text-2xl font-bold text-blue-600">Our Vision</h2>
+          <h2 className="text-2xl font-bold text-green-600">Our Vision</h2>
           <p className="text-gray-700 mt-2 leading-relaxed">
             Our vision is to create a strong, united, and self-reliant Ghosi
             community by leveraging technology, education, and economic
@@ -25,7 +25,7 @@ const VisionMissionObjectives = () => {
 
         {/* Mission Section */}
         <section className="mb-6">
-          <h2 className="text-2xl font-bold text-blue-600">Our Mission</h2>
+          <h2 className="text-2xl font-bold text-green-600">Our Mission</h2>
           <p className="text-gray-700 mt-2 leading-relaxed">
             Our mission is committed to fostering unity, progress, and
             empowerment within the Ghosi community. We aim to uplift our people
@@ -36,7 +36,7 @@ const VisionMissionObjectives = () => {
 
         {/* Objectives Section */}
         <section>
-          <h2 className="text-2xl font-bold text-blue-600">Our Objectives</h2>
+          <h2 className="text-2xl font-bold text-green-600">Our Objectives</h2>
           <ul className="mt-4 space-y-4 text-gray-700">
             {[
               "Knowledge Sharing Platform – Creating a common space for Ghosi scholars and professionals to exchange ideas, collaborate, and contribute to community growth.",
@@ -51,7 +51,7 @@ const VisionMissionObjectives = () => {
               "Preserving Culture & Traditions – Promoting awareness, participation, and celebrations of Ghosi heritage, traditions, and knowledge-sharing.",
             ].map((objective, index) => (
               <li key={index} className="flex items-start">
-                <span className="text-blue-500 text-lg font-bold mr-2">•</span>
+                <span className="text-green-500 text-lg font-bold mr-2">•</span>
                 {objective}
               </li>
             ))}

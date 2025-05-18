@@ -30,7 +30,7 @@ const Matrimonial = () => {
         (!gender || user.gender.toLowerCase() === gender.toLowerCase()) &&
         (!ageFrom || user.age >= ageFrom) &&
         (!ageTo || user.age <= ageTo) &&
-        (!motherTongue || user.motherTongue === motherTongue)
+        (!motherTongue || user.motherTongue.toLowerCase() === motherTongue.toLowerCase())
       );
     });
     setFilteredUsers(results);
@@ -38,7 +38,7 @@ const Matrimonial = () => {
   };
 const navigate = useNavigate();
 const clickHandler=()=>{
-  navigate("/register")
+  navigate("/registerform")
   
 }
 const loginclickHandler=()=>{
@@ -48,26 +48,25 @@ const loginclickHandler=()=>{
 
   return (
 <div className="max-w-full mx-auto p-8 bg-white rounded-lg shadow-lg mt-4">
-<div className="md:flex justify-around mb-6">
- <div>
-  <h6 className="text-xl font-bold text-center text-[rgb(9,8,5)] bg-[#45eb36] px-2 py-2 rounded-lg">
+ <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+  <h6 className="text-xl font-bold text-center text-[rgb(9,8,5)] bg-[#45eb36] px-4 py-2 rounded-lg">
     Find Your Perfect Match in the Ghosi Community
   </h6>
-</div>
-<div className="md:flex justify-end gap-4">
+  <div className="flex flex-row sm:flex-row gap-2">
     <button 
-    onClick={clickHandler}
-    className="px-4 bg-[#256c1c] text-white rounded-lg  shadow-md hover:bg-[#65864f] transition duration-300"
+      onClick={clickHandler}
+      className="px-6 py-2 bg-[#256c1c] text-white rounded-lg shadow-md hover:bg-[#65864f] transition duration-300"
     >
       Register
     </button>
     <button 
-    onClick={loginclickHandler}
-    className="px-4 py-0 bg-gray-600 text-white rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+      onClick={loginclickHandler}
+      className="px-6 py-2 bg-gray-600 text-white rounded-lg shadow-md hover:bg-gray-700 transition duration-300"
+    >
       Login
     </button>
   </div>
-  </div>
+</div>
 
       
       <div className="flex flex-wrap md:flex-nowrap gap-4 md:gap-8">
@@ -138,7 +137,7 @@ const loginclickHandler=()=>{
         )}
       </div>
     </div>
-  );
+  )
 };
 
 export default Matrimonial;

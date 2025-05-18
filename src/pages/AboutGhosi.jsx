@@ -2,9 +2,9 @@ import React from 'react';
 
 const AboutGhosi = () => {
   return (
-    <div className="bg-gray-200 min-h-screen">
+    <div className="bg-gray-200 min-h-screen mt-4">
       {/* Header Section */}
-      <header className="bg-blue-900 text-white text-center py-3 shadow-lg">
+      <header className="bg-linear-to-r from-gray-500 via-green-500 to-emerald-400 text-white text-center py-3 shadow-lg">
         <h1 className="text-3xl font-bold" aria-label="About Ghosi Community">
           About Ghosi Community
         </h1>
@@ -14,7 +14,7 @@ const AboutGhosi = () => {
       <div className="max-w-5xl mx-auto bg-white p-8 mt-6 rounded-lg shadow-lg">
         {/* Origin of the Ghosi Community */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-2" aria-label="Origin of the Ghosi Community">
+          <h2 className="text-2xl font-bold text-green-800 mb-2" aria-label="Origin of the Ghosi Community">
             Origin of the Ghosi Community
           </h2>
           <p className="text-gray-700 leading-relaxed">
@@ -27,7 +27,7 @@ const AboutGhosi = () => {
 
         {/* Occupation and Livelihood */}
         <section className="mt-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Occupation and Livelihood</h2>
+          <h2 className="text-2xl font-bold text-green-800 mb-2">Occupation and Livelihood</h2>
           <p className="text-gray-700 leading-relaxed">
             The Ghosi people have traditionally been involved in cattle rearing and dairy farming. They extract milk 
             and sell it in markets or households. Additionally, they produce dairy products such as ghee, khoya, and 
@@ -38,7 +38,7 @@ const AboutGhosi = () => {
 
         {/* Cultural and Religious Beliefs */}
         <section className="mt-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Cultural and Religious Beliefs</h2>
+          <h2 className="text-2xl font-bold text-green-800 mb-2">Cultural and Religious Beliefs</h2>
           <p className="text-gray-700 leading-relaxed">
             The Ghosi community follows the Islamic faith and primarily belongs to the Sunni faction. They strongly 
             adhere to the five pillars of Islam: Iman (faith), Namaz (prayers), fasting during Ramadan, Zakat 
@@ -49,7 +49,7 @@ const AboutGhosi = () => {
 
         {/* Marriage System */}
         <section className="mt-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Marriage System</h2>
+          <h2 className="text-2xl font-bold text-green-800 mb-2">Marriage System</h2>
           <p className="text-gray-700 leading-relaxed">
             The Ghosi community follows an arranged marriage system within their community. They practice the 
             Gotra (Sijra) system, and marriages between closely related family members are common. Both monogamy 
@@ -60,7 +60,7 @@ const AboutGhosi = () => {
 
         {/* Women in the Ghosi Community */}
         <section className="mt-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Women in the Ghosi Community</h2>
+          <h2 className="text-2xl font-bold text-green-800 mb-2">Women in the Ghosi Community</h2>
           <p className="text-gray-700 leading-relaxed">
             Women in the Ghosi community actively contribute to household income by producing and selling dairy 
             products. They generally perform prayers at home instead of in mosques. While they have almost equal 
@@ -70,7 +70,7 @@ const AboutGhosi = () => {
 
         {/* Panchayat System */}
         <section className="mt-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">The Panchayat System</h2>
+          <h2 className="text-2xl font-bold text-green-800 mb-2">The Panchayat System</h2>
           <p className="text-gray-700 leading-relaxed">
             The Ghosi community historically had a strong Panchayat system to resolve internal disputes. The 
             council typically consisted of three to five respected elders. The leader, known as "Chaudhry," played 
