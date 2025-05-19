@@ -29,10 +29,10 @@ jobs:
         run: npm run build
 
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: production-files
-          path: ./build
+          path: build
 
   deploy:
     name: Deploy to VPS
@@ -42,10 +42,10 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v2.1.1
         with:
           name: production-files
-          path: ./build
+          path: build
 
       - name: Setup SSH key
         run: |
@@ -58,6 +58,6 @@ jobs:
         run: |
           rsync -avz -e "ssh -i ~/.ssh/id_ed25519" ./build/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_APP_PATH }}
 
-      - name: (Optional) Reload NGINX
+      - name: Reload NGINX
         run: |
           ssh -i ~/.ssh/id_ed25519 ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "sudo systemctl reload nginx"
