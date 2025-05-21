@@ -1,8 +1,8 @@
-name: Deploy to VPS
+name: Deploy React App to VPS
 
 on:
   push:
-    branches: [main]  # Only run on pushes to main branch
+    branches: [main]
 
 jobs:
   deploy:
@@ -12,12 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Debug variables
-        run: |
-          echo "User: ${{ secrets.VPS_USER }}"
-          echo "Host: ${{ secrets.VPS_HOST }}"
-          echo "Path: ${{ secrets.VPS_PATH }}"
-
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
@@ -25,17 +19,15 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy to VPS
+      - name: Build React app
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
-            if [ -d '${{ secrets.VPS_PATH }}' ]; then
-              cd '${{ secrets.VPS_PATH }}' &&
-              git reset --hard HEAD &&
-              git pull origin main &&
-              npm install &&
-              pm2 restart all
-            else
-              echo 'ERROR: Directory ${{ secrets.VPS_PATH }} not found on VPS.'
-              exit 1
-            fi
-          "
+          npm install
+          npm run build
+
+      - name: Deploy build folder to VPS
+        run: |
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519" ./build/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_PATH }}
+
+      - name: Reload Nginx (if needed)
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "sudo systemctl reload nginx || echo 'Nginx reload failed or not necessary'"
