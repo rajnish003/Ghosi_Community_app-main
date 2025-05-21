@@ -2,7 +2,7 @@ name: Deploy to VPS
 
 on:
   push:
-    branches: [main]  #  Only run on pushes to main branch
+    branches: [main]  # Only run on pushes to main branch
 
 jobs:
   deploy:
@@ -28,8 +28,14 @@ jobs:
       - name: Deploy to VPS
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
-            cd ${{ secrets.VPS_PATH }} &&
-            git pull origin main &&
-            npm install &&
-            pm2 restart all
+            if [ -d '${{ secrets.VPS_PATH }}' ]; then
+              cd '${{ secrets.VPS_PATH }}' &&
+              git reset --hard HEAD &&
+              git pull origin main &&
+              npm install &&
+              pm2 restart all
+            else
+              echo 'ERROR: Directory ${{ secrets.VPS_PATH }} not found on VPS.'
+              exit 1
+            fi
           "
