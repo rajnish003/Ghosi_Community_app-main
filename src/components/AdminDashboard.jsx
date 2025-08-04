@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Card from "../components/Card"; 
 import { BarChart, Users, FileWarning, Search } from "lucide-react";
 import { useAuth } from '../context/AuthProvider';

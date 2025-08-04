@@ -9,7 +9,7 @@ import AppRouter from "./Routes/AppRouter";
 import { AuthProvider } from "./context/AuthProvider";
 // import GoogleTranslate from "./components/GoogleTranslate";
 
-export const DataContext = createContext();
+// export const DataContext = createContext();
 
 const App = () => {
   const [loading, setLoading] = useState(false);

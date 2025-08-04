@@ -31,7 +31,21 @@ const App = () => {
     };
   }, [location]);
 
-  
+  // useEffect(() => {
+    // let isMounted = true;
+    // axios
+    //   .post("http://localhost:4000/api/v1/track-visit")
+    //   .then((res) => {
+    //     if (isMounted && res.data?.visit !== undefined) {
+    //       setCounter(res.data.visit);
+    //     }
+    //   })
+    //   .catch((err) => console.error("Error fetching visit count:", err));
+
+  //   return () => {
+  //     isMounted = false;
+  //   };
+  // }, []);
 
   return (
     <DataContext.Provider value={{ cardData, setCardData}}>

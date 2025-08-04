@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Login = () => {
 const [formData,setFormData]= useState({
@@ -71,7 +71,7 @@ const changeHandler = (event) => {
           </button>
         </form>
         <p className="text-center text-sm text-gray-600 mt-4">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <a href="/becomeaMemeber" className="text-blue-500 hover:underline">
            Become a Member
           </a>

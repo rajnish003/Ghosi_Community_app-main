@@ -19,7 +19,7 @@ const Header = () => {
 
         {/* Title Section (Text) */}
         <div className="text-center md:text-left">
-          <span className="block font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#ffff]">
+          <span className="block font-serif text-[24px] sm:text-3xl md:text-4xl font-semibold text-[#ffff]">
             Welcome to Ghosi Community Website
           </span>
           <span className="text-xl sm:text-2xl md:text-3xl text-[#ffff]">
