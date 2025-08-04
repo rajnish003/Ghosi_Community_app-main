@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Hero_img from '../components/Hero_img'
 import Latest_post from '../components/Latest_post'
 import Aboutghosi from '../components/Aboutus'

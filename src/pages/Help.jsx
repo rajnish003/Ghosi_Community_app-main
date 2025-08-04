@@ -7,9 +7,9 @@ const Help= () => {
     subject: '',
     issueType: '',
     description: '',
-    urgency: 'medium',
+    urgency: '',
     attachments: null,
-    contactMethod: 'email',
+    contactMethod: 'phone',
     phone: '',
     preferredTime: ''
   });

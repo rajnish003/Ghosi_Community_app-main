@@ -1,22 +1,37 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Hero_img = () => {
   const slides = [
     {
       id: 1,
-      desktopSrc: "/image/Web_Photo_Editor.jpg",
-      mobileSrc: "/image/mobile_view1.png",
+      desktopSrc: "/image/gimgupd1.jpg",
+      mobileSrc: "/image/gimgupd1.jpg",
     },
     {
       id: 2,
-      desktopSrc: "/image/fImage1.jpg",
-      mobileSrc: "/image/mobile_view2.png",
+      desktopSrc: "/image/gimg2.jpg",
+      mobileSrc: "/image/gimg2.jpg",
     },
     {
       id: 3,
-      desktopSrc: "/image/Web_Photo_Editor3.jpg",
-      mobileSrc: "/image/mobile_image3.png",
+      desktopSrc: "/image/gimg3.jpg",
+      mobileSrc: "/image/gimg3.jpg",
+    },
+    {
+      id: 4,
+      desktopSrc: "/image/gimg4.jpg",
+      mobileSrc: "/image/gimg4.jpg",
+    },
+    {
+      id: 5,
+      desktopSrc: "/image/gimg5.jpg",
+      mobileSrc: "/image/gimg5.jpg",
+    },
+    {
+      id: 6,
+      desktopSrc: "/image/gimg6.jpg",
+      mobileSrc: "/image/gimg6.jpg",
     },
   ];
 
